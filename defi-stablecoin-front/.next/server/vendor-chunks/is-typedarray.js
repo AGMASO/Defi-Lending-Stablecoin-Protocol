@@ -1,0 +1,24 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "vendor-chunks/is-typedarray";
+exports.ids = ["vendor-chunks/is-typedarray"];
+exports.modules = {
+
+/***/ "(ssr)/./node_modules/is-typedarray/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/is-typedarray/index.js ***!
+  \*********************************************/
+/***/ ((module) => {
+
+eval("module.exports = isTypedArray;\nisTypedArray.strict = isStrictTypedArray;\nisTypedArray.loose = isLooseTypedArray;\nvar toString = Object.prototype.toString;\nvar names = {\n    \"[object Int8Array]\": true,\n    \"[object Int16Array]\": true,\n    \"[object Int32Array]\": true,\n    \"[object Uint8Array]\": true,\n    \"[object Uint8ClampedArray]\": true,\n    \"[object Uint16Array]\": true,\n    \"[object Uint32Array]\": true,\n    \"[object Float32Array]\": true,\n    \"[object Float64Array]\": true\n};\nfunction isTypedArray(arr) {\n    return isStrictTypedArray(arr) || isLooseTypedArray(arr);\n}\nfunction isStrictTypedArray(arr) {\n    return arr instanceof Int8Array || arr instanceof Int16Array || arr instanceof Int32Array || arr instanceof Uint8Array || arr instanceof Uint8ClampedArray || arr instanceof Uint16Array || arr instanceof Uint32Array || arr instanceof Float32Array || arr instanceof Float64Array;\n}\nfunction isLooseTypedArray(arr) {\n    return names[toString.call(arr)];\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9mcm9udC8uL25vZGVfbW9kdWxlcy9pcy10eXBlZGFycmF5L2luZGV4LmpzPzEyZjkiXSwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgICAgICA9IGlzVHlwZWRBcnJheVxuaXNUeXBlZEFycmF5LnN0cmljdCA9IGlzU3RyaWN0VHlwZWRBcnJheVxuaXNUeXBlZEFycmF5Lmxvb3NlICA9IGlzTG9vc2VUeXBlZEFycmF5XG5cbnZhciB0b1N0cmluZyA9IE9iamVjdC5wcm90b3R5cGUudG9TdHJpbmdcbnZhciBuYW1lcyA9IHtcbiAgICAnW29iamVjdCBJbnQ4QXJyYXldJzogdHJ1ZVxuICAsICdbb2JqZWN0IEludDE2QXJyYXldJzogdHJ1ZVxuICAsICdbb2JqZWN0IEludDMyQXJyYXldJzogdHJ1ZVxuICAsICdbb2JqZWN0IFVpbnQ4QXJyYXldJzogdHJ1ZVxuICAsICdbb2JqZWN0IFVpbnQ4Q2xhbXBlZEFycmF5XSc6IHRydWVcbiAgLCAnW29iamVjdCBVaW50MTZBcnJheV0nOiB0cnVlXG4gICwgJ1tvYmplY3QgVWludDMyQXJyYXldJzogdHJ1ZVxuICAsICdbb2JqZWN0IEZsb2F0MzJBcnJheV0nOiB0cnVlXG4gICwgJ1tvYmplY3QgRmxvYXQ2NEFycmF5XSc6IHRydWVcbn1cblxuZnVuY3Rpb24gaXNUeXBlZEFycmF5KGFycikge1xuICByZXR1cm4gKFxuICAgICAgIGlzU3RyaWN0VHlwZWRBcnJheShhcnIpXG4gICAgfHwgaXNMb29zZVR5cGVkQXJyYXkoYXJyKVxuICApXG59XG5cbmZ1bmN0aW9uIGlzU3RyaWN0VHlwZWRBcnJheShhcnIpIHtcbiAgcmV0dXJuIChcbiAgICAgICBhcnIgaW5zdGFuY2VvZiBJbnQ4QXJyYXlcbiAgICB8fCBhcnIgaW5zdGFuY2VvZiBJbnQxNkFycmF5XG4gICAgfHwgYXJyIGluc3RhbmNlb2YgSW50MzJBcnJheVxuICAgIHx8IGFyciBpbnN0YW5jZW9mIFVpbnQ4QXJyYXlcbiAgICB8fCBhcnIgaW5zdGFuY2VvZiBVaW50OENsYW1wZWRBcnJheVxuICAgIHx8IGFyciBpbnN0YW5jZW9mIFVpbnQxNkFycmF5XG4gICAgfHwgYXJyIGluc3RhbmNlb2YgVWludDMyQXJyYXlcbiAgICB8fCBhcnIgaW5zdGFuY2VvZiBGbG9hdDMyQXJyYXlcbiAgICB8fCBhcnIgaW5zdGFuY2VvZiBGbG9hdDY0QXJyYXlcbiAgKVxufVxuXG5mdW5jdGlvbiBpc0xvb3NlVHlwZWRBcnJheShhcnIpIHtcbiAgcmV0dXJuIG5hbWVzW3RvU3RyaW5nLmNhbGwoYXJyKV1cbn1cbiJdLCJuYW1lcyI6WyJtb2R1bGUiLCJleHBvcnRzIiwiaXNUeXBlZEFycmF5Iiwic3RyaWN0IiwiaXNTdHJpY3RUeXBlZEFycmF5IiwibG9vc2UiLCJpc0xvb3NlVHlwZWRBcnJheSIsInRvU3RyaW5nIiwiT2JqZWN0IiwicHJvdG90eXBlIiwibmFtZXMiLCJhcnIiLCJJbnQ4QXJyYXkiLCJJbnQxNkFycmF5IiwiSW50MzJBcnJheSIsIlVpbnQ4QXJyYXkiLCJVaW50OENsYW1wZWRBcnJheSIsIlVpbnQxNkFycmF5IiwiVWludDMyQXJyYXkiLCJGbG9hdDMyQXJyYXkiLCJGbG9hdDY0QXJyYXkiLCJjYWxsIl0sIm1hcHBpbmdzIjoiQUFBQUEsT0FBT0MsT0FBTyxHQUFRQztBQUN0QkEsYUFBYUMsTUFBTSxHQUFHQztBQUN0QkYsYUFBYUcsS0FBSyxHQUFJQztBQUV0QixJQUFJQyxXQUFXQyxPQUFPQyxTQUFTLENBQUNGLFFBQVE7QUFDeEMsSUFBSUcsUUFBUTtJQUNSLHNCQUFzQjtJQUN0Qix1QkFBdUI7SUFDdkIsdUJBQXVCO0lBQ3ZCLHVCQUF1QjtJQUN2Qiw4QkFBOEI7SUFDOUIsd0JBQXdCO0lBQ3hCLHdCQUF3QjtJQUN4Qix5QkFBeUI7SUFDekIseUJBQXlCO0FBQzdCO0FBRUEsU0FBU1IsYUFBYVMsR0FBRztJQUN2QixPQUNLUCxtQkFBbUJPLFFBQ25CTCxrQkFBa0JLO0FBRXpCO0FBRUEsU0FBU1AsbUJBQW1CTyxHQUFHO0lBQzdCLE9BQ0tBLGVBQWVDLGFBQ2ZELGVBQWVFLGNBQ2ZGLGVBQWVHLGNBQ2ZILGVBQWVJLGNBQ2ZKLGVBQWVLLHFCQUNmTCxlQUFlTSxlQUNmTixlQUFlTyxlQUNmUCxlQUFlUSxnQkFDZlIsZUFBZVM7QUFFdEI7QUFFQSxTQUFTZCxrQkFBa0JLLEdBQUc7SUFDNUIsT0FBT0QsS0FBSyxDQUFDSCxTQUFTYyxJQUFJLENBQUNWLEtBQUs7QUFDbEMiLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvaXMtdHlwZWRhcnJheS9pbmRleC5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/is-typedarray/index.js\n");
+
+/***/ })
+
+};
+;
