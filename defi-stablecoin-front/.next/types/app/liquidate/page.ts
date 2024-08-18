@@ -1,4 +1,4 @@
-// File: /Users/guindito/Code/BASICS-THEORY/defi-stablecoin-front/app/liquidate/page.jsx
+// File: /Users/guindito/Code/BASICS-THEORY/Defi-Lending-StableCoin-Protocol/defi-stablecoin-front/app/liquidate/page.jsx
 import * as entry from '../../../../app/liquidate/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

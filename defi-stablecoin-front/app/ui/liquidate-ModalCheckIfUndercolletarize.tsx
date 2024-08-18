@@ -13,6 +13,7 @@ import checkHealthFactor from "../lib/scripts/checkHealthFactor";
 
 export default function ModalCheckIfUnderCollateralized() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     addressUser: "",
   });
@@ -27,7 +28,7 @@ export default function ModalCheckIfUnderCollateralized() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
+    setIsLoading(true);
     console.log(formData.addressUser);
 
     const checkHealthFactorValue = await checkHealthFactor(
@@ -39,12 +40,14 @@ export default function ModalCheckIfUnderCollateralized() {
       setIsUnderCollaterize(false);
     }
   };
+
   const handleCloseModal = () => {
     // Reset the form data when the modal is closed
     setFormData({
       addressUser: "",
     });
     setIsOpen(false);
+    setIsLoading(false);
   };
 
   return (
@@ -61,14 +64,19 @@ export default function ModalCheckIfUnderCollateralized() {
           <form onSubmit={handleSubmit}>
             <ModalHeader className='flex flex-col gap-1'>
               Check Health Factor
-              {isUnderCollaterize ? (
+              {isUnderCollaterize && !isLoading ? (
                 <p className=' text-red-500 text-sm'>
                   Selected User is Undercollaterized, You can Liquidate!
                 </p>
               ) : (
+                ""
+              )}
+              {!isUnderCollaterize && isLoading ? (
                 <p className=' text-green-400 , text-sm'>
                   Not Undercollaterized
                 </p>
+              ) : (
+                ""
               )}
             </ModalHeader>
             <ModalBody>
@@ -89,6 +97,7 @@ export default function ModalCheckIfUnderCollateralized() {
               <Button color='danger' variant='flat' onClick={handleCloseModal}>
                 Close
               </Button>
+
               <Button type='submit' color='primary'>
                 Check
               </Button>

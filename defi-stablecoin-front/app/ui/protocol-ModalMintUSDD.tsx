@@ -13,6 +13,7 @@ import mintUSDD from "../lib/scripts/mintUSDD";
 
 export default function ModalMint() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     amountUSDDToMint: "",
   });
@@ -26,6 +27,7 @@ export default function ModalMint() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsLoading(true);
 
     console.log(formData.amountUSDDToMint);
 
@@ -33,6 +35,7 @@ export default function ModalMint() {
 
     // Close the modal after submission
     //setIsOpen(false);
+    setIsLoading(false);
     window.location.href = "/protocol";
   };
   const handleCloseModal = () => {
@@ -76,9 +79,15 @@ export default function ModalMint() {
               <Button color='danger' variant='flat' onClick={handleCloseModal}>
                 Close
               </Button>
-              <Button type='submit' color='primary'>
-                Mint USDD
-              </Button>
+              {!isLoading ? (
+                <Button type='submit' color='primary'>
+                  Mint USDD
+                </Button>
+              ) : (
+                <Button color='primary' isLoading>
+                  Mint USDD
+                </Button>
+              )}
             </ModalFooter>
           </form>
         </ModalContent>

@@ -1,4 +1,4 @@
-// File: /Users/guindito/Code/BASICS-THEORY/defi-stablecoin-front/app/layout.tsx
+// File: /Users/guindito/Code/BASICS-THEORY/Defi-Lending-StableCoin-Protocol/defi-stablecoin-front/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

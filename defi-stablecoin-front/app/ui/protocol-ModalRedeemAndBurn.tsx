@@ -13,6 +13,7 @@ import redeemAndBurn from "../lib/scripts/redeemAndBurn";
 
 export default function ModalRedeemAndBurn() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     tokenCollateral: "",
     amountToRedeem: "",
@@ -28,6 +29,7 @@ export default function ModalRedeemAndBurn() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsLoading(true);
 
     console.log(formData.tokenCollateral, formData.amountToRedeem);
 
@@ -38,6 +40,7 @@ export default function ModalRedeemAndBurn() {
     );
 
     // Close the modal after submission
+    setIsLoading(false);
 
     window.location.href = "/protocol";
   };
@@ -106,9 +109,15 @@ export default function ModalRedeemAndBurn() {
               <Button color='danger' variant='flat' onClick={handleCloseModal}>
                 Close
               </Button>
-              <Button type='submit' color='primary'>
-                Redeem Collateral
-              </Button>
+              {!isLoading ? (
+                <Button type='submit' color='primary'>
+                  Redeem Collateral
+                </Button>
+              ) : (
+                <Button color='primary' isLoading>
+                  Redeem Collateral
+                </Button>
+              )}
             </ModalFooter>
           </form>
         </ModalContent>

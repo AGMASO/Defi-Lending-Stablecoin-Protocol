@@ -20,7 +20,7 @@ export default function MenuNotConnected() {
       <NavbarBrand>
         <NavbarItem href='/' as={Link} className='text-white'>
           <Logo />
-          <p className='font-bold text-inherit'>TradifyPlatform</p>
+          <p className='font-bold text-inherit'>USDD Protocol</p>
         </NavbarItem>
       </NavbarBrand>
 

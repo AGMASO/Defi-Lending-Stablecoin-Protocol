@@ -13,6 +13,7 @@ import liquidate from "../lib/scripts/liquidate";
 
 export default function ModalLiquidate() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     collateralTokenAddress: "",
     user: "",
@@ -28,7 +29,7 @@ export default function ModalLiquidate() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
+    setIsLoading(true);
     console.log(formData.collateralTokenAddress);
     console.log(formData.user);
     console.log(formData.debtToCover);
@@ -38,7 +39,7 @@ export default function ModalLiquidate() {
       formData.user,
       formData.debtToCover
     );
-
+    setIsLoading(false);
     // reboost page after finishing
 
     //window.location.href = "/liquidate";
@@ -51,6 +52,7 @@ export default function ModalLiquidate() {
       debtToCover: "",
     });
     setIsOpen(false);
+    setIsLoading(false);
   };
 
   return (
@@ -108,9 +110,15 @@ export default function ModalLiquidate() {
               <Button color='danger' variant='flat' onClick={handleCloseModal}>
                 Close
               </Button>
-              <Button type='submit' color='primary'>
-                Liquidate
-              </Button>
+              {!isLoading ? (
+                <Button type='submit' color='primary'>
+                  Liquidate
+                </Button>
+              ) : (
+                <Button color='primary' isLoading>
+                  Liquidate
+                </Button>
+              )}
             </ModalFooter>
           </form>
         </ModalContent>

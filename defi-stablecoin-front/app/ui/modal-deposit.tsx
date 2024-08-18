@@ -7,12 +7,13 @@ import {
   Button,
   Input,
 } from "@nextui-org/react";
-  import { useState } from "react";
+import { useState } from "react";
 
 import depositCollateral from "../lib/scripts/depositCollateral";
 
 export default function ModalDeposit() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     tokenAddress: "",
     amountToDeposit: "",
@@ -27,6 +28,7 @@ export default function ModalDeposit() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    setIsLoading(true);
 
     console.log(formData.tokenAddress, formData.amountToDeposit);
 
@@ -34,6 +36,7 @@ export default function ModalDeposit() {
 
     // Close the modal after submission
     setIsOpen(false);
+    setIsLoading(false);
   };
   const handleCloseModal = () => {
     // Reset the form data when the modal is closed
@@ -88,9 +91,16 @@ export default function ModalDeposit() {
               <Button color='danger' variant='flat' onClick={handleCloseModal}>
                 Close
               </Button>
-              <Button type='submit' color='primary'>
-                Deposit
-              </Button>
+
+              {!isLoading ? (
+                <Button type='submit' color='primary'>
+                  Deposit
+                </Button>
+              ) : (
+                <Button color='primary' isLoading>
+                  Deposit
+                </Button>
+              )}
             </ModalFooter>
           </form>
         </ModalContent>
