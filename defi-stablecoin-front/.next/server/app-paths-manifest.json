@@ -1,6 +1,5 @@
 {
   "/page": "app/page.js",
-  "/protocol/page": "app/protocol/page.js",
-  "/liquidate/page": "app/liquidate/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/liquidate/page": "app/liquidate/page.js"
 }
