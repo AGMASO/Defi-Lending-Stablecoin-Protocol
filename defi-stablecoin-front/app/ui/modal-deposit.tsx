@@ -94,7 +94,7 @@ export default function ModalDeposit() {
 
               {!isLoading ? (
                 <Button type='submit' color='primary'>
-                  Depositeeeee
+                  Deposit
                 </Button>
               ) : (
                 <Button color='primary' isLoading>
