@@ -56,7 +56,7 @@ contract ContinueOnRevertHandlerBasedInvariant is StdInvariant, Test {
 
     /// forge-config: default.invariant.runs = 128
     /// forge-config: default.invariant.depth = 128
-    /// forge-config: default.invariant.fail-on-revert = false
+    /// forge-config: default.invariant.fail-on-revert = true
     function invariant_protocolMustHaveMoreValueThanSupplyFalse() public view {
         uint256 amountOfUsddMinted = s_usdd.totalSupply();
         console.log("TotalSupply of USDD", amountOfUsddMinted);

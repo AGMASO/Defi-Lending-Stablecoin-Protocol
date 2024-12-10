@@ -113,7 +113,7 @@ contract ContinueOnRevertHandler is Test {
         int256 maxUsddToMint = (int256(collateralValueInUSD) / 2) -
             int256(totalMintedUSDD);
 
-        if (maxUsddToMint == 0) {
+        if (maxUsddToMint < 0) {
             return;
         }
 
@@ -188,4 +188,11 @@ contract ContinueOnRevertHandler is Test {
         }
         return s_dscEngine.getSwBTC();
     }
+
+    //!Esta Fn rompe el invariant Test. Porque si baja el Valor de nuestro collateral muy rapido
+    //     //!El valor de Minted USDD sera mayor al valor del collateral.
+    //     // function updatePriceFeed() public {
+    //     //     s_priceFeedETH.updateAnswer(1000e8);
+    //     //     s_priceFeedBTC.updateAnswer(40000e8);
+    //     // }
 }
